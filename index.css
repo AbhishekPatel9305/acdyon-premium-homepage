@@ -1,0 +1,194 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    min-width: 320px;
+    overflow-x: hidden;
+    background: #fbfaf5;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  a,
+  button {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@layer components {
+  .focus-ring {
+    @apply rounded-lg outline-none focus-visible:ring-2 focus-visible:ring-moss focus-visible:ring-offset-4 focus-visible:ring-offset-paper;
+  }
+
+  .nav-link {
+    @apply rounded-md px-1 py-2 text-sm font-medium text-steel transition-colors hover:text-ink focus-ring;
+  }
+
+  .mobile-link {
+    @apply rounded-lg px-3 py-3 text-base font-semibold text-ink transition-colors hover:bg-white focus-ring;
+  }
+
+  .primary-button {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-moss px-5 py-3 text-sm font-semibold text-white shadow-lift transition-all duration-200 hover:-translate-y-0.5 hover:bg-ink focus-ring;
+  }
+
+  .secondary-button {
+    @apply inline-flex items-center justify-center rounded-lg border border-ink/15 bg-white px-5 py-3 text-sm font-semibold text-ink transition-all duration-200 hover:-translate-y-0.5 hover:border-moss/40 focus-ring;
+  }
+
+  .icon-button {
+    @apply grid h-11 w-11 place-items-center rounded-lg border border-ink/10 bg-white text-ink transition-colors hover:border-moss/40 focus-ring;
+  }
+
+  .eyebrow {
+    @apply inline-flex max-w-full items-center gap-2 rounded-lg border border-moss/20 bg-white px-3 py-2 text-sm font-semibold text-moss shadow-sm;
+  }
+
+  .hero-visual {
+    @apply rounded-xl border border-ink/10 bg-white p-3 shadow-panel;
+    background-image: linear-gradient(135deg, rgba(185, 239, 220, 0.38), rgba(229, 202, 104, 0.18));
+  }
+
+  .section-pad {
+    @apply py-16 sm:py-20 lg:py-24;
+  }
+
+  .section-heading {
+    @apply max-w-3xl;
+  }
+
+  .section-heading p {
+    @apply text-sm font-semibold uppercase text-moss;
+  }
+
+  .section-heading h2 {
+    @apply mt-3 font-display text-4xl font-semibold leading-tight text-ink sm:text-5xl;
+  }
+
+  .section-heading span {
+    @apply mt-4 block text-base leading-8 text-steel;
+  }
+
+  .dashboard-shell {
+    @apply flex min-w-0 gap-4 rounded-lg border border-ink/10 bg-paper p-4 shadow-sm sm:p-5;
+  }
+
+  .dashboard-sidebar {
+    @apply hidden w-36 shrink-0 flex-col gap-2 rounded-lg bg-ink p-3 text-sm text-white/60 lg:flex;
+  }
+
+  .dashboard-sidebar span {
+    @apply rounded-md px-3 py-2;
+  }
+
+  .dashboard-sidebar .active-nav {
+    @apply bg-paper text-ink;
+  }
+
+  .dashboard-topbar {
+    @apply flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between;
+  }
+
+  .dashboard-search {
+    @apply flex h-11 items-center gap-2 rounded-lg border border-ink/10 bg-white px-3 text-sm text-steel;
+  }
+
+  .metric-card {
+    @apply rounded-lg border border-ink/10 bg-white p-4 text-sm text-steel;
+  }
+
+  .metric-card svg {
+    @apply mb-3 text-moss;
+  }
+
+  .metric-card strong {
+    @apply mt-1 block font-display text-lg font-semibold text-ink;
+  }
+
+  .chip {
+    @apply rounded-lg border border-ink/10 bg-white px-3 py-2 text-sm font-semibold text-steel transition-colors hover:border-moss/30 focus-ring;
+  }
+
+  .chip-active {
+    @apply border-moss bg-moss text-white;
+  }
+
+  .task-row {
+    @apply grid gap-3 border-b border-ink/10 px-4 py-4 last:border-b-0 sm:grid-cols-[1fr_auto] sm:items-center;
+  }
+
+  .task-row span {
+    @apply text-sm text-steel;
+  }
+
+  .status-pill {
+    @apply inline-flex w-fit rounded-md px-2.5 py-1 text-xs font-semibold;
+  }
+
+  .feature-card {
+    @apply rounded-lg border border-ink/10 bg-white p-5 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-lift;
+  }
+
+  .feature-card svg {
+    @apply text-moss;
+  }
+
+  .feature-card h3 {
+    @apply mt-5 font-display text-lg font-semibold leading-snug;
+  }
+
+  .feature-card p {
+    @apply mt-3 text-sm leading-6 text-steel;
+  }
+
+  .demo-panel {
+    @apply rounded-xl border border-white/10 bg-white/10 p-4 shadow-panel sm:p-6;
+  }
+
+  .demo-tab {
+    @apply rounded-lg border border-white/15 px-4 py-2 text-sm font-semibold text-white/70 transition-all hover:border-mint hover:text-white focus-ring focus-visible:ring-mint focus-visible:ring-offset-ink;
+  }
+
+  .demo-tab-active {
+    @apply border-mint bg-mint text-ink hover:text-ink;
+  }
+
+  .demo-task {
+    @apply flex items-center gap-3 rounded-lg border border-ink/10 bg-white px-4 py-3 text-sm font-semibold text-ink shadow-sm transition-all duration-300;
+  }
+
+  .demo-task span {
+    @apply grid h-7 w-7 shrink-0 place-items-center rounded-md bg-mint text-moss;
+  }
+}
+
+@layer utilities {
+  .focus-mode .demo-task:not(:first-child) {
+    opacity: 0.58;
+  }
+}
+
+@media (max-width: 640px) {
+  .dashboard-shell {
+    padding: 0.75rem;
+  }
+
+  .metric-card {
+    padding: 0.875rem;
+  }
+
+  .task-row {
+    padding: 0.875rem;
+  }
+}

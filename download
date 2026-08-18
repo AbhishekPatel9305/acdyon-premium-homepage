@@ -1,0 +1,8 @@
+node_modules
+dist
+verification
+*.tsbuildinfo
+.env
+.env.*
+.DS_Store
+npm-debug.log*
